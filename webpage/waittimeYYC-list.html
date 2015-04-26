@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	
+
+	
+	
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="DataTables%20example%20-%20Zero%20configuration_files/jquery.css">
+	<link rel="stylesheet" type="text/css" href="DataTables%20example%20-%20Zero%20configuration_files/shCore.css">
+	<style type="text/css" class="init">
+
+	</style>
+	<script type="text/javascript" language="javascript" src="DataTables%20example%20-%20Zero%20configuration_files/jquery_002.js"></script>
+	<script type="text/javascript" language="javascript" src="DataTables%20example%20-%20Zero%20configuration_files/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="DataTables%20example%20-%20Zero%20configuration_files/shCore.js"></script>
+	<script type="text/javascript" language="javascript" src="DataTables%20example%20-%20Zero%20configuration_files/demo.js"></script>
+	<script type="text/javascript" language="javascript" class="init">
+
+
+	
+	
+$(document).ready(function() {
+	$('#example').DataTable();
+} );
+
+
+	</script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+	
+	<!-- google maps end --->
+	
+	
+	
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">WaitTimeYYC</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#clinics">Clinics around me</a></li>
+                <li><a href="#doctors">Doctors around me</a></li>
+               
+<!--
+			   <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li> -->
+				
+				<li  style="cursor:pointer;">
+			<img src = "assets\img\lists.png" height="8%" width="8%"  data-toggle="tooltip" data-placement="bottom" title="Show listing" onclick="javascript:location.replace('waittimeYYC-list.html')" style="cursor:pointer;" />
+					
+					<img src = "assets\img\mapIconColor.png" height="10%" width="10%" data-toggle="tooltip" data-placement="bottom" title="Show on Map" onclick="javascript:location.replace('waittimeYYC.html')"  style="cursor:pointer" />
+						
+				</li>
+				
+				
+				
+				
+				
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+<div class="content-div">
+ 
+ <!-- main listing start -------------------->
+
+  	<div class="container">
+		<section>
+			
+			
+			<div class="dataTables_wrapper" id="example_wrapper"><div id="example_length" class="dataTables_length"></div><div class="dataTables_filter" id="example_filter"></div><table style="width: 100%;" aria-describedby="example_info" role="grid" id="example" class="display dataTable" cellspacing="0" width="100%">
+				<thead>
+					<tr role="row"><th aria-label="Name: activate to sort column descending" aria-sort="ascending" style="width: 152px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0" class="sorting_asc">Name</th><th aria-label="Position: activate to sort column ascending" style="width: 253px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0" class="sorting">Position</th><th aria-label="Office: activate to sort column ascending" style="width: 115px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0" class="sorting">Office</th><th aria-label="Age: activate to sort column ascending" style="width: 50px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0" class="sorting">Age</th><th aria-label="Start date: activate to sort column ascending" style="width: 106px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0" class="sorting">Start date</th><th aria-label="Salary: activate to sort column ascending" style="width: 89px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0" class="sorting">Salary</th></tr>
+				</thead>
+
+				<tfoot>
+					<tr><th colspan="1" rowspan="1">Name</th><th colspan="1" rowspan="1">Position</th><th colspan="1" rowspan="1">Office</th><th colspan="1" rowspan="1">Age</th><th colspan="1" rowspan="1">Start date</th><th colspan="1" rowspan="1">Salary</th></tr>
+				</tfoot>
+
+				<tbody>
+					
+									<tr class="odd" role="row">
+						<td class="sorting_1">Airi Satou</td>
+						<td>Accountant</td>
+						<td>Tokyo</td>
+						<td>33</td>
+						<td>2008/11/28</td>
+						<td>$162,700</td>
+					</tr><tr class="even" role="row">
+						<td class="sorting_1">Angelica Ramos</td>
+						<td>Chief Executive Officer (CEO)</td>
+						<td>London</td>
+						<td>47</td>
+						<td>2009/10/09</td>
+						<td>$1,200,000</td>
+					</tr><tr class="odd" role="row">
+						<td class="sorting_1">Ashton Cox</td>
+						<td>Junior Technical Author</td>
+						<td>San Francisco</td>
+						<td>66</td>
+						<td>2009/01/12</td>
+						<td>$86,000</td>
+					</tr><tr class="even" role="row">
+						<td class="sorting_1">Bradley Greer</td>
+						<td>Software Engineer</td>
+						<td>London</td>
+						<td>41</td>
+						<td>2012/10/13</td>
+						<td>$132,000</td>
+					</tr><tr class="odd" role="row">
+						<td class="sorting_1">Brenden Wagner</td>
+						<td>Software Engineer</td>
+						<td>San Francisco</td>
+						<td>28</td>
+						<td>2011/06/07</td>
+						<td>$206,850</td>
+					</tr><tr class="even" role="row">
+						<td class="sorting_1">Brielle Williamson</td>
+						<td>Integration Specialist</td>
+						<td>New York</td>
+						<td>61</td>
+						<td>2012/12/02</td>
+						<td>$372,000</td>
+					</tr><tr class="odd" role="row">
+						<td class="sorting_1">Bruno Nash</td>
+						<td>Software Engineer</td>
+						<td>London</td>
+						<td>38</td>
+						<td>2011/05/03</td>
+						<td>$163,500</td>
+					</tr><tr class="even" role="row">
+						<td class="sorting_1">Caesar Vance</td>
+						<td>Pre-Sales Support</td>
+						<td>New York</td>
+						<td>21</td>
+						<td>2011/12/12</td>
+						<td>$106,450</td>
+					</tr><tr class="odd" role="row">
+						<td class="sorting_1">Cara Stevens</td>
+						<td>Sales Assistant</td>
+						<td>New York</td>
+						<td>46</td>
+						<td>2011/12/06</td>
+						<td>$145,600</td>
+					</tr><tr class="even" role="row">
+						<td class="sorting_1">Cedric Kelly</td>
+						<td>Senior Javascript Developer</td>
+						<td>Edinburgh</td>
+						<td>22</td>
+						<td>2012/03/29</td>
+						<td>$433,060</td>
+					</tr></tbody>
+			</table><div aria-live="polite" role="status" id="example_info" class="dataTables_info">Showing 1 to 10 of 57 entries</div><div id="example_paginate" class="dataTables_paginate paging_simple_numbers"><a id="example_previous" tabindex="0" data-dt-idx="0" aria-controls="example" class="paginate_button previous disabled">Previous</a><span><a tabindex="0" data-dt-idx="1" aria-controls="example" class="paginate_button current">1</a><a tabindex="0" data-dt-idx="2" aria-controls="example" class="paginate_button ">2</a><a tabindex="0" data-dt-idx="3" aria-controls="example" class="paginate_button ">3</a><a tabindex="0" data-dt-idx="4" aria-controls="example" class="paginate_button ">4</a><a tabindex="0" data-dt-idx="5" aria-controls="example" class="paginate_button ">5</a><a tabindex="0" data-dt-idx="6" aria-controls="example" class="paginate_button ">6</a></span><a id="example_next" tabindex="0" data-dt-idx="7" aria-controls="example" class="paginate_button next">Next</a></div></div>
+
+			
+		</section>
+	</div>
+
+  	
+
+  
+  
+  <!-- main listing  end-------------------->  
+
+ 
+ 
+ 
+   
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+   
+	
+    <link href="waittimeYYC.css" rel="stylesheet">
+  </body>
+</html>

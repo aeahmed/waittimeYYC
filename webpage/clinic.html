@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>QMe - Patient Queue Managment for clinics</title>
+	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.css" />
+<!--	<link rel="stylesheet" href="../../jquery-mobile/dist/jquery.mobile.css" />-->
+<!--	<link rel="stylesheet" href="../build/jqm.editable.listview.css">-->
+	<link rel="stylesheet" href="assets/todo/css/editable-listview.css">
+	<link rel="stylesheet" href="assets/todo/demo/demo.css">
+	 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.js"></script>
+<!--	<script src="../../jquery-mobile/dist/jquery.mobile.js"></script>-->
+<!--	<script src="../build/jqm.editable.listview.js"></script>-->
+	<script src="assets/todo/js/collapsible-patched.js"></script>
+	<script src="assets/todo/js/editable-listview.js"></script>
+</head>
+
+<body>
+
+
+ <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+               <img src="assets\img\logo.png" height="70px" width="70px" />
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+               
+<!--
+			   <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li> -->
+				
+				
+				<li>
+				</li>
+				
+				
+				
+				
+				
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div style="padding: 20px">
+
+        <p>Add walk in Patient information</strong></p>
+        <ul data-role="listview" data-editable="true" data-editable-type="complex" data-editable-form="editing-form" data-title="Walk-in Patients" data-empty-title="No Patients">
+            <li>
+                <a>
+                    <h3><span id="Patient Name">John</span></h3>
+                    <p><em>Phone:</em> <strong><span id="fruitShape">403-220-5550</span></strong></p>
+                    <p><em>Email:</em> <strong><span id="fruitColor">john@doe.com</span></strong></p>
+                </a>
+            </li>
+           </li>
+        </ul>
+
+        <form id="editing-form" data-editable-form="true">
+            Patient Name : 
+			<input type="text" data-item-name="patientName" data-item-template="<h3><span id='PatientName'>%%</span></h3>">
+            
+			Patient Phone Number :
+			<input type="text" data-item-name="patientPhone" data-item-template="<p><em>Phone:</em> <strong><span id='patientPhone'>%%</span></strong></p>">
+            
+			Patient email address : 
+			<input type="text" data-item-name="email" data-item-template="<p><em>Email:</em> <strong><span id='email'>%%</span></strong></p>">
+            
+			<button class="ui-btn ui-corner-all" data-add-button="true">Add</button>
+            <button class="ui-btn ui-corner-all" data-clear-button="true">Clear</button>
+        </form>
+
+    </div>
+    
+    <script>
+	    var $list = $( "#list" ).listview({
+            editable: true,
+//            editableType: "simple",
+//            collapsed: false,
+	        title: "Fruits",
+	        emptyTitle: "No Fruits"
+        });
+
+//        $("#list3").listview().listview("disable")
+//        console.log($("#list3").listview().listview("dis")[0])
+
+//        $("#list3").on('listviewchange', function(e, data) {
+//            console.log('listviewchange fired', data)
+//        })
+
+        // Example 3: Programmatically inserting a list item
+        function insertFruit() {
+            var fruits = ['Cherry', 'Melon', 'Coconut', 'Raspberry',
+                          'Papaya', 'Apricot', 'Guava', 'Cranberry',
+                          'Date', 'Grapefruit', 'Jackfruit', 'Key Lime',
+                          'Plum', 'Pear', 'Pomegranate', 'Strawberry',
+                          'Tangerine', 'Avocado', 'Passionfruit', 'Pineapple']
+
+            var $list = $('#list3')
+            $list.append('<li>' + fruits[getRandomInt(0, 19)] + '</li>')
+            $list.listview('refresh')
+        }
+
+        // Returns a random integer between min (included) and max (excluded)
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+	</script>
+</body>
+</html>
